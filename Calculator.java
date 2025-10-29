@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class Calculator {
     public static String add(double a,double b){
         return String.valueOf(a+b);
@@ -16,6 +17,7 @@ public class Calculator {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        try{
         System.out.println("Enter first number:");
         double x=sc.nextDouble();
         System.out.println("Enter operator(+,-,*,/):");
@@ -30,6 +32,14 @@ public class Calculator {
         else{ result="Invalid operator"; }
 
         System.out.println("Result: "+result);
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid input. Please enter numeric value.");
+        }
+        catch(Exception e){
+            System.out.println("An Unexpected error occurred: "+e.getMessage());
+        }
         sc.close();
     }
+
 }

@@ -39,7 +39,9 @@ public class Calculator {
         catch(Exception e){
             System.out.println("An Unexpected error occurred: "+e.getMessage());
         }
+        finally{
+            System.out.println("===================PROGRAM ENDED===================");
         sc.close();
     }
-
+}
 }
